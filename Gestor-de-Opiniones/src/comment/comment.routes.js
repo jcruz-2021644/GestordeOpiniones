@@ -4,14 +4,16 @@ import { validateCreateComment, validateUpdateComment, validateCommentById, vali
 
 const router = Router();
 
+// crear comentario para una publicación (postId en params)
 router.post(
-    '/create',
+    '/:postId/create',
     validateCreateComment,
     createComment
 );
 
+// listar comentarios de una publicación: /post/:postId
 router.get(
-    '/',
+    '/post/:postId',
     validateGetComments,
     getComments
 );

@@ -4,9 +4,11 @@ import Post from '../post/post.model.js';
 
 export const createComment = async (req, res) => {
     try {
-        const { content } = req.body;
-        const { postId } = req.params;
-        const { uid, username } = req.user;
+    const { content } = req.body;
+    const { postId } = req.params;
+    // el JWT genera el id del usuario en la claim 'sub'
+    const userId = req.user?.sub;
+    const username = req.user?.username || req.body.username;
         const post = await Post.findById(postId);
         if (!post) {
             return res.status(404).json({
@@ -17,7 +19,7 @@ export const createComment = async (req, res) => {
         const comment = new Comment({
             content,
             postId,
-            userId: uid,
+            userId: userId || req.body.userId,
             username
         });
         await comment.save();
@@ -37,8 +39,8 @@ export const createComment = async (req, res) => {
 
 export const getComments = async (req, res) => {
     try {
-        const { postId } = req.params;
-        const { page = 1, limit = 10 } = req.query;
+    const { postId } = req.params;
+    const { page = 1, limit = 10 } = req.query;
         const post = await Post.findById(postId);
         if (!post) {
             return res.status(404).json({
@@ -73,9 +75,10 @@ export const getComments = async (req, res) => {
 
 export const updateComment = async (req, res) => {
     try {
-        const { id } = req.params;
-        const { content } = req.body;
-        const { uid, role } = req.user;
+    const { id } = req.params;
+    const { content } = req.body;
+    const userId = req.user?.sub;
+    const role = req.user?.role;
         const comment = await Comment.findById(id);
         if (!comment) {
             return res.status(404).json({
@@ -84,7 +87,7 @@ export const updateComment = async (req, res) => {
             });
         }
 
-        if (comment.userId !== uid && role !== 'ADMIN_ROLE' && role !== 'MODERATOR_ROLE') {
+    if (comment.userId !== (userId || req.body.userId) && role !== 'ADMIN_ROLE' && role !== 'MODERATOR_ROLE') {
             return res.status(403).json({
                 success: false,
                 message: 'No autorizado para editar este comentario'
@@ -109,8 +112,9 @@ export const updateComment = async (req, res) => {
 
 export const deleteComment = async (req, res) => {
     try {
-        const { id } = req.params;
-        const { uid, role } = req.user;
+    const { id } = req.params;
+    const userId = req.user?.sub;
+    const role = req.user?.role;
         const comment = await Comment.findById(id);
         if (!comment) {
             return res.status(404).json({
@@ -119,7 +123,7 @@ export const deleteComment = async (req, res) => {
             });
         }
 
-        if (comment.userId !== uid && role !== 'ADMIN_ROLE') {
+        if (comment.userId !== (userId || req.body.userId) && role !== 'ADMIN_ROLE') {
             return res.status(403).json({
                 success: false,
                 message: 'No autorizado'
