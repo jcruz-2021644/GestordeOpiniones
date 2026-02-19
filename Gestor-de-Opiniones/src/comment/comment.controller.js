@@ -6,7 +6,6 @@ export const createComment = async (req, res) => {
     try {
     const { content } = req.body;
     const { postId } = req.params;
-    // el JWT genera el id del usuario en la claim 'sub'
     const userId = req.user?.sub;
     const username = req.user?.username || req.body.username;
         const post = await Post.findById(postId);
@@ -166,3 +165,32 @@ export const getCommentById = async (req, res) => {
     }
 };
 
+export const getAllComments = async (req, res) => {
+    try {
+        const { page = 1, limit = 10 } = req.query;
+
+        const comments = await Comment.find()
+            .limit(limit * 1)
+            .skip((page - 1) * limit)
+            .sort({ createdAt: -1 });
+
+        const total = await Comment.countDocuments();
+
+        res.status(200).json({
+            success: true,
+            data: comments,
+            pagination: {
+                currentPage: parseInt(page),
+                totalPages: Math.ceil(total / limit),
+                totalRecords: total
+            }
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error al obtener comentarios',
+            error: error.message
+        });
+    }
+};
