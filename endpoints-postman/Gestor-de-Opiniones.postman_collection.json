@@ -1,0 +1,384 @@
+{
+  "info": {
+    "_postman_id": "4916e4f0-093e-46e6-954e-6243bcce0ba6",
+    "name": "Gestor-de-Opiniones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48332475",
+    "_collection_link": "https://go.postman.co/collection/48332475-4916e4f0-093e-46e6-954e-6243bcce0ba6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "AuthService-GO",
+      "item": [
+        {
+          "name": "Register Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Jefry",
+                  "type": "text"
+                },
+                {
+                  "key": "surname",
+                  "value": "Cruz",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "jcruz",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "jcruz-2021644@kinal.edu.gt",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "admin132",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "12121214",
+                  "type": "text"
+                },
+                {
+                  "key": "profilePicture",
+                  "type": "file",
+                  "uuid": "f4f81883-f2ff-4c24-ac1b-50739f27217f",
+                  "src": "/C:/Users/PC/Pictures/yo sueter beige.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/v1/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emailOrUsername\": \"gestordeopinionesjcruz@gmail.com\",\r\n    \"password\": \"jcruz-2021644\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify Email Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"M2XDCy4zVCkb42xGwB8YMhshNMfnhAXbRRYoVcsHd0M\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/v1/auth/verify-email",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "verify-email"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resend Verification Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"jcruz-2021644@kinal.edu.gt\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/v1/auth/resend-verification",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "resend-verification"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forgot Password Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"jcruz-2021644@kinal.edu.gt\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/v1/auth/forgot-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "forgot-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reset Password Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"wSaFRksO6UbjoamszdrbrptcQlVO6CBJkQH6DYfdNIg\",\r\n    \"newPassword\": \"Jcruz2021644Sexto\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/v1/auth/reset-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "item": [
+        {
+          "name": "Listar-posts",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emailOrUsername\": \"gestordeopinionesjcruz@gmail.com\",\r\n    \"password\": \"jcruz-2021644\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Agregar-post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3Jfc3B6TW5uSlY0WEdmIiwianRpIjoiMWUwODczY2UtOWFmMS00OGY2LTg0NDgtZmU1ZjhhMmM3Njk4IiwiaWF0IjoxNzcxNDcxMDE5LCJyb2xlIjoiVVNFUl9ST0xFIiwiZXhwIjoxNzcxNDcyODE5LCJhdWQiOiJBdXRoU2VydmljZSIsImlzcyI6IkF1dGhTZXJ2aWNlIn0.Uq3ggE6R-14blN9xGiNoCRW7u6cKS7P8frse3okudho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Mi primer post por parte de Jefry\",\r\n    \"category\": \"Nueva categoria\",\r\n    \"content\": \"Es mi primer post comenten\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar-post",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Mi primer post por parte de Jefry\",\r\n    \"category\": \"Nueva categoria\",\r\n    \"content\": \"Es mi primer post comenten\",\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar-post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "buscar-post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
