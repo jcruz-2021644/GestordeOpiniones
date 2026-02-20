@@ -22,6 +22,11 @@ const postSchema = mongoose.Schema({
         trim: true,
         minLength: [10, 'El contenido debe tener al menos 10 caracteres']
     },
+    image: {
+        type: String,
+        trim: true,
+        default: null
+    },
     userId: {
         type: String,
         required: true
