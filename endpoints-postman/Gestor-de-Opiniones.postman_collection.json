@@ -20,22 +20,22 @@
               "formdata": [
                 {
                   "key": "name",
-                  "value": "Jefry",
+                  "value": "tiline",
                   "type": "text"
                 },
                 {
                   "key": "surname",
-                  "value": "Cruz",
+                  "value": "de le on",
                   "type": "text"
                 },
                 {
                   "key": "username",
-                  "value": "jcruz",
+                  "value": "tlon",
                   "type": "text"
                 },
                 {
                   "key": "email",
-                  "value": "jcruz-2021644@kinal.edu.gt",
+                  "value": "jefryyu67@gmail.com",
                   "type": "text"
                 },
                 {
@@ -47,12 +47,6 @@
                   "key": "phone",
                   "value": "12121214",
                   "type": "text"
-                },
-                {
-                  "key": "profilePicture",
-                  "type": "file",
-                  "uuid": "f4f81883-f2ff-4c24-ac1b-50739f27217f",
-                  "src": "/C:/Users/PC/Pictures/yo sueter beige.jpeg"
                 }
               ]
             },
@@ -111,7 +105,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"token\": \"M2XDCy4zVCkb42xGwB8YMhshNMfnhAXbRRYoVcsHd0M\"\r\n}",
+              "raw": "{\r\n    \"token\": \"y7ZhZJX-fu76nI1FHXBeHZ22e8uDe9L_fFFVS3CohZY\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -270,7 +264,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3Jfc3B6TW5uSlY0WEdmIiwianRpIjoiMWUwODczY2UtOWFmMS00OGY2LTg0NDgtZmU1ZjhhMmM3Njk4IiwiaWF0IjoxNzcxNDcxMDE5LCJyb2xlIjoiVVNFUl9ST0xFIiwiZXhwIjoxNzcxNDcyODE5LCJhdWQiOiJBdXRoU2VydmljZSIsImlzcyI6IkF1dGhTZXJ2aWNlIn0.Uq3ggE6R-14blN9xGiNoCRW7u6cKS7P8frse3okudho",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWpaZ0taWURGTk5CIiwianRpIjoiZjY1ZWYwMWMtODUzMi00MDA2LWIxOGYtYzMxZjllOGMyNDkyIiwiaWF0IjoxNzcxNTk2ODQ5LCJyb2xlIjoiVVNFUl9ST0xFIiwidXNlcm5hbWUiOiJqY3J1eiIsImV4cCI6MTc3MTU5ODY0OSwiYXVkIjoiQXV0aFNlcnZpY2UiLCJpc3MiOiJBdXRoU2VydmljZSJ9.0aeu9_8fgOI3VR873Cj1KfzHe4pttkCvACv8BaGX4DE",
                   "type": "string"
                 }
               ]
@@ -278,13 +272,33 @@
             "method": "POST",
             "header": [],
             "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"title\": \"Mi primer post por parte de Jefry\",\r\n    \"category\": \"Nueva categoria\",\r\n    \"content\": \"Es mi primer post comenten\"\r\n}\r\n",
-              "options": {
-                "raw": {
-                  "language": "json"
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "e904b261-1515-45ab-9732-3d615a549767",
+                  "src": "/C:/Users/Informatica/Desktop/therians.jpg"
+                },
+                {
+                  "key": "title",
+                  "value": "La reunion de therians",
+                  "type": "text",
+                  "uuid": "9276d1b2-8719-4518-9306-953f30d76043"
+                },
+                {
+                  "key": "category",
+                  "value": "#Reunion",
+                  "type": "text",
+                  "uuid": "0b04ee1b-5efc-459e-95aa-0f43c44bc893"
+                },
+                {
+                  "key": "content",
+                  "value": "Ven a la fiesta de therians en GT",
+                  "type": "text",
+                  "uuid": "8ad82ca3-9dfe-4855-81ac-24b9368028e3"
                 }
-              }
+              ]
             },
             "url": {
               "raw": "http://localhost:3006/api/v1/post/create",
@@ -306,19 +320,46 @@
         {
           "name": "Actualizar-post",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfZFpzOVRHSjZWTmV5IiwianRpIjoiOThiMTM4YjMtZTg4NC00MWMyLWExMTEtZjdkM2UzMGUzMTgzIiwiaWF0IjoxNzcxNTk3OTU5LCJyb2xlIjoiVVNFUl9ST0xFIiwidXNlcm5hbWUiOiJ0bG9uIiwiZXhwIjoxNzcxNTk5NzU5LCJhdWQiOiJBdXRoU2VydmljZSIsImlzcyI6IkF1dGhTZXJ2aWNlIn0.Txq5LVrgPrxyennlXbZA-VpxtVtPEPXXCvlZvyHtMtY",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "PUT",
             "header": [],
             "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"title\": \"Mi primer post por parte de Jefry\",\r\n    \"category\": \"Nueva categoria\",\r\n    \"content\": \"Es mi primer post comenten\",\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Mejor no vengas a la reunion de therians",
+                  "type": "text"
+                },
+                {
+                  "key": "category",
+                  "value": "#cancelada #therians",
+                  "type": "text"
+                },
+                {
+                  "key": "content",
+                  "value": "Se cancelo la reunion por fines eticos",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "649f7699-c596-4f56-b27a-ce1d5158b2b3",
+                  "src": "/C:/Users/Informatica/Desktop/shaq_time_out.jpg"
                 }
-              }
+              ]
             },
             "url": {
-              "raw": "http://localhost:3006/api/v1/post/",
+              "raw": "http://localhost:3006/api/v1/post/69986c9791478c79f8c4bc6a",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -328,7 +369,7 @@
                 "api",
                 "v1",
                 "post",
-                ""
+                "69986c9791478c79f8c4bc6a"
               ]
             }
           },
@@ -337,10 +378,20 @@
         {
           "name": "Eliminar-post",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfVWFHR0NCdjZ6NTltIiwianRpIjoiYjdlYTU0Y2UtMjljOC00OTM3LTkwYWEtYzIzOTMxMTU0NTFlIiwiaWF0IjoxNzcxNTM1MTMyLCJyb2xlIjoiQURNSU5fUk9MRSIsInVzZXJuYW1lIjoiZ2VzdG9yZGVvcGluaW9uZXNhZG1pbiIsImV4cCI6MTc3MTUzNjkzMiwiYXVkIjoiQXV0aFNlcnZpY2UiLCJpc3MiOiJBdXRoU2VydmljZSJ9.ckC9nHrSW-TWKXlY0NX8pbCF9NtJfOFVWV4qvNrtwsE",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3006/api/v1/post/create",
+              "raw": "http://localhost:3006/api/v1/post/69977dd53a3e243e207b75c4",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -350,7 +401,7 @@
                 "api",
                 "v1",
                 "post",
-                "create"
+                "69977dd53a3e243e207b75c4"
               ]
             }
           },
@@ -373,6 +424,218 @@
                 "v1",
                 "post",
                 ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "listar post mas comments",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfRzdZeGg1ZDd1VnFiIiwianRpIjoiNzk1Mjg1ZTUtY2IzMC00NjNjLTkwNGEtNGE0MDFkNTU4ZjNmIiwiaWF0IjoxNzcxNjAwNTI1LCJyb2xlIjoiQURNSU5fUk9MRSIsInVzZXJuYW1lIjoiZ2VzdG9yZGVvcGluaW9uZXNhZG1pbiIsImV4cCI6MTc3MTYwMjMyNSwiYXVkIjoiQXV0aFNlcnZpY2UiLCJpc3MiOiJBdXRoU2VydmljZSJ9.cXIEczbIZNaLTkyHoEuEwokgw_Ibci7QVq2RtJFSUPs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/69986c9791478c79f8c4bc6a/comments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                "69986c9791478c79f8c4bc6a",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "item": [
+        {
+          "name": "Listar-comments",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfRzdZeGg1ZDd1VnFiIiwianRpIjoiNzk1Mjg1ZTUtY2IzMC00NjNjLTkwNGEtNGE0MDFkNTU4ZjNmIiwiaWF0IjoxNzcxNjAwNTI1LCJyb2xlIjoiQURNSU5fUk9MRSIsInVzZXJuYW1lIjoiZ2VzdG9yZGVvcGluaW9uZXNhZG1pbiIsImV4cCI6MTc3MTYwMjMyNSwiYXVkIjoiQXV0aFNlcnZpY2UiLCJpc3MiOiJBdXRoU2VydmljZSJ9.cXIEczbIZNaLTkyHoEuEwokgw_Ibci7QVq2RtJFSUPs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3006/api/v1/comment",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "comment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "listar comentarios de un post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfZFpzOVRHSjZWTmV5IiwianRpIjoiMDM0ZTM2NTktMTc4OS00YzFlLTg1OTktMGE5MWVhMjNiODE1IiwiaWF0IjoxNzcxNTk4NTE3LCJyb2xlIjoiVVNFUl9ST0xFIiwidXNlcm5hbWUiOiJ0bG9uIiwiZXhwIjoxNzcxNjAwMzE3LCJhdWQiOiJBdXRoU2VydmljZSIsImlzcyI6IkF1dGhTZXJ2aWNlIn0.tcSNjdxlSMETOi01vtWZW_gPm9HoAu0ttTypIpxx5LI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3006/api/v1/comment/post/69986c9791478c79f8c4bc6a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "comment",
+                "post",
+                "69986c9791478c79f8c4bc6a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar comentario por id de comentario",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Agregar-comment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWpaZ0taWURGTk5CIiwianRpIjoiOTFiN2YwNjctYWNlNC00MjdiLTg3MmEtZTg5Y2IyYTQ2MDA4IiwiaWF0IjoxNzcxNTk4NzE2LCJyb2xlIjoiVVNFUl9ST0xFIiwidXNlcm5hbWUiOiJqY3J1eiIsImV4cCI6MTc3MTYwMDUxNiwiYXVkIjoiQXV0aFNlcnZpY2UiLCJpc3MiOiJBdXRoU2VydmljZSJ9.h4k052nnbPLRlg2YDbu5nVPBpum-H9GW1HQ3Mty9IU8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"content\": \"Yo si queria ir auuuuuuuuuuuuuuu\",\r\n\"userId\": \"usr_1jZgKZYDFNNB\",\r\n\"username\": \"jcruz\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3006/api/v1/comment/post/69986c9791478c79f8c4bc6a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "comment",
+                "post",
+                "69986c9791478c79f8c4bc6a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar-comment",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"content\": \"Eso que JAAJAJAJAJAJ todo bot dos maeeeeeeeee\",\r\n\"userId\": \"usr_d87PSC5GtVbf\",\r\n\"username\": \"gestordeopinionesadmin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar-comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3006/api/v1/post/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3006",
+              "path": [
+                "api",
+                "v1",
+                "post",
+                "create"
               ]
             }
           },
